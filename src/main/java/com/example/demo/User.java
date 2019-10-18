@@ -17,6 +17,7 @@ public class User {
     private int balance;
 
     @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "ATM_id")
     private ATM atm;
 
     public long getId() {

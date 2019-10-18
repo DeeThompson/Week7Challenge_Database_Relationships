@@ -1,6 +1,6 @@
 package com.example.demo;
 
-import org.springframework.data.annotation.Id;
+
 
 import javax.persistence.*;
 import java.util.Set;
@@ -15,9 +15,32 @@ public class ATM {
 
     private String name;
 
-    private ATM atm;
 
     @OneToMany(mappedBy = "atm", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    public Set<User> users;
+    private Set<User> users;
 
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Set<User> getUsers() {
+        return users;
+    }
+
+    public void setUsers(Set<User> users) {
+        this.users = users;
+    }
 }
+
